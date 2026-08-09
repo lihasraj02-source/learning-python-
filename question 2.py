@@ -1,3 +1,6 @@
+##
+
+
 def num(n): 
         i=0
         while i<n:
