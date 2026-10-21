@@ -1,3 +1,4 @@
+import re
 class Applicant:
     applicant_details=[] #To store the applicant data in the list 
     def __init__(self,name,roll,year,number,mail):
@@ -18,11 +19,19 @@ class Applicant:
             for app in cls.applicant_details:#if there are any applicant then it will show this 
                 print(app.show_applicant())
     @staticmethod
-    def valid_rollno(roll):#used to check if the roll number is valid or not 
+    def valid_rollno(roll):#used to check if the roll number is valid or not using regex 
         if len(roll)==8:
             return True
         else:
             return False
+    @staticmethod
+    def valid_mail(mail):#checking if the mail is valid or not 
+      pattern=bool(re.fullmatch(r"^[a-zA-Z0-9_.+-]+@[a-z]+\.[a-z]+$",mail))
+      if pattern==True:
+        return True
+      else :
+        return False
+   
 n=int(input("Enter the number of applicant you want to add: "))#asking the user to entering the total number of applicant 
 
 #used for manual entry of the applicant through terminal 
