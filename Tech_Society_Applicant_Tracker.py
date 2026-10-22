@@ -19,14 +19,14 @@ class Applicant:
             for app in cls.applicant_details:#if there are any applicant then it will show this 
                 print(app.show_applicant())
     @staticmethod
-    def valid_rollno(roll):#used to check if the roll number is valid or not using regex 
+    def valid_rollno(roll):#used to check if the roll number is valid or not 
         if len(roll)==8:
             return True
         else:
             return False
     @staticmethod
-    def valid_mail(mail):#checking if the mail is valid or not 
-      pattern=bool(re.fullmatch(r"^[a-zA-Z0-9_.+-]+@[a-z]+\.[a-z]+$",mail))
+    def valid_mail(mail):#checking if the mail is valid or not using regex
+      pattern=bool(re.fullmatch(r"^[0-9]+@kiit\.ac\.in+$",mail))# General mail_id of Kiit is to be matched in the entered roll_number 
       if pattern==True:
         return True
       else :
